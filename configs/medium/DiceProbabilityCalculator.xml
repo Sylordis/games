@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>DiceProbabilityCalculator</projectname>
+	<type subcategory="medium">Training</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>DiceProbabilityCalculatorMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>commons/math/probability/**</file>
+				<file>games/medium/specific/DiceProbabilityCalculator.java</file>
+				<file>games/medium/DiceProbabilityCalculatorMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

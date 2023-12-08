@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Next Car License Plate</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>NextCarLicensePlateMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/puzzles/NextCarLicensePlateMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

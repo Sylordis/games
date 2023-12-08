@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Coders Strike Back</projectname>
+	<type>Contest</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>CodersStrikeBackMain</mainfrom>
+				<mainto>Player</mainto>
+			</main>
+			<files>
+				<file>commons/AbstractTwoElementsContainer.java</file>
+				<file>commons/graph/Abstract2DcoordinateElement.java</file>
+				<file>commons/IdentifiableEntity.java</file>
+				<file>commons/IdentifiableEntityContainer.java</file>
+				<file>commons/IntegerIdentifiableEntityContainer.java</file>
+				<file>commons/graph/Point2D.java</file>
+				<file>commons/graph/Circle2D.java</file>
+				<file>contests/codersstrikeback/*.java</file>
+				<file>contests/CodersStrikeBackMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

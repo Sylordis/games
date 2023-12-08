@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>The Max Surface Box</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>TheMaxSurfaceBox</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/puzzles/maxsurfacebox/SimpleCube.java</file>
+				<file>games/puzzles/maxsurfacebox/TheMaxSurfaceBox.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

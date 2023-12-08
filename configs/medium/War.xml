@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>War</projectname>
+	<type subcategory="medium">Training</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>WarMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>commons/cards/*.java</file>
+				<file>games/medium/war/*.java</file>
+				<file>games/medium/WarMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

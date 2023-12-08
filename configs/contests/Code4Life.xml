@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Code4Life</projectname>
+	<type>Contest</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>Code4LifeMain</mainfrom>
+				<mainto>Player</mainto>
+			</main>
+			<files>
+				<file>commons/IdentifiableEntity.java</file>
+				<file>commons/IdentifiableEntityContainer.java</file>
+				<file>commons/IntegerIdentifiableEntityContainer.java</file>
+				<file>contests/code4life/*/*.java</file>
+				<file>contests/code4life/*.java</file>
+				<file>contests/Code4LifeMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

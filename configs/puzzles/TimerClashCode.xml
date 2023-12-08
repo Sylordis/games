@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Timer for Clash of Code</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>TimerClashCode</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/puzzles/TimerClashCode.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

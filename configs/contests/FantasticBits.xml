@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Fantastic Bits</projectname>
+	<type>Contest</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>FantasticBitsMain</mainfrom>
+				<mainto>Player</mainto>
+			</main>
+			<files>
+				<file>commons/AbstractTwoElementsContainer.java</file>
+				<file>commons/graph/Abstract2DcoordinateElement.java</file>
+				<file>commons/graph/Point2D.java</file>
+				<file>commons/graph/Line2D.java</file>
+				<file>commons/graph/Circle2D.java</file>
+				<file>commons/Pair.java</file>
+				<file>commons/Triplet.java</file>
+				<file>contests/fantasticbits/*/*.java</file>
+				<file>contests/fantasticbits/*.java</file>
+				<file>contests/FantasticBitsMain.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

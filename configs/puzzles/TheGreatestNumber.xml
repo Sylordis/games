@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>The Greatest Number</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>TheGreatestNumber</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/puzzles/TheGreatestNumber.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

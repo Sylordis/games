@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Folding Paper</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>FoldingPaperMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/communitypuzzles/foldingpaper/*.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

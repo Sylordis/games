@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Numbers In Letters</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>NumbersInLetters</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>games/puzzles/NumbersInLetters.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

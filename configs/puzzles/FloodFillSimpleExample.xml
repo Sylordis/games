@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Flood Fill Simple Example</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>FloodFillExampleMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>commons/IdentifiableEntity.java</file>
+				<file>commons/AbstractBoard.java</file>
+				<file>commons/Board.java</file>
+				<file>commons/Pair.java</file>
+				<file>commons/Direction.java</file>
+				<file>games/puzzles/floodingexample/*.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

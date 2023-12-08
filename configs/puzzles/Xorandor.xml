@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Xorandor</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>XorandorMain</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>commons/logical/*.java</file>
+				<file>games/puzzles/xorandor/*.java</file>
+			</files>
+		</java>
+	</languages>
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<projectname>Hangman</projectname>
+	<type>Community Puzzles</type>
+	<languages>
+		<java>
+			<main>
+				<mainfrom>Hangman</mainfrom>
+				<mainto>Solution</mainto>
+			</main>
+			<files>
+				<file>commons/StatefulObject.java</file>
+				<file>commons/GameException.java</file>
+				<file>games/puzzles/hangman/*.java</file>
+				<file>games/puzzles/Hangman.java</file>
+			</files>
+		</java>
+	</languages>
+</project>
