@@ -1,0 +1,39 @@
+[project]
+name = "games"
+description = "Code for programming games"
+version = "1.0"
+dependencies = []
+requires-python = ">= 3.11"
+authors = [
+    {name = "Sylvain 'Sylordis' Domenjoud"}
+]
+maintainers = [
+    {name = "Sylvain 'Sylordis' Domenjoud"}
+]
+readme = "../../Readme.md"
+license = {file = "../../LICENSE"}
+keywords = []
+
+[project.scripts]
+character-generator = "bin:main"
+
+[project.urls]
+Homepage = "https://github.com/Sylordis/games"
+Documentation = "https://github.com/Sylordis/games/Readme.md"
+Repository = "https://github.com/Sylordis/games.git"
+Issues = "https://github.com/Sylordis/games/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = 'test'
+# Log
+log_cli = true
+log_level = 'INFO'
+log_format = '%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)'
+log_date_format = '%Y-%m-%d %H:%M:%S'
+pythonpath = "src"
+
+[tool.black]
+line-length = 100
