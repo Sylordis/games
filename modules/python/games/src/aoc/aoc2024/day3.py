@@ -2,13 +2,9 @@ from pathlib import Path
 import re
 
 from ..puzzle_aoc import PuzzleAOC
-from ...utils.inputs import Files
 
 
 class Day3(PuzzleAOC):
-
-    def __init__(self):
-        super().__init__()
 
     def parse_input(self, input_file: Path):
         data = ""

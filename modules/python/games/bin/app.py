@@ -1,10 +1,10 @@
 import argparse
-import importlib.util
-from pathlib import Path
+# import importlib.util
+# from pathlib import Path
 import sys
 import logging
 
-from ..src.aoc.aoc2024.day3 import Day3
+from ..src.aoc.aoc2024.day4 import Day4
 
 
 logger = logging.getLogger(__name__)
@@ -35,4 +35,4 @@ def main():
     # instance = class_()
     # instance.solve(args.input_file)
     # print(args.module, args.input_file)
-    Day3().solve(sys.argv[1:])
+    Day4().solve(sys.argv[1:])
