@@ -3,8 +3,6 @@ import itertools
 
 from ..puzzle_aoc import PuzzleAOC
 
-DIRECTIONS = [-1, 0, 1]
-
 
 class Day4(PuzzleAOC):
 
@@ -16,12 +14,6 @@ class Day4(PuzzleAOC):
         with open(input_file, "r") as file:
             self.data = file.read().splitlines()
         return self.data
-
-    def find_words(self, x_start: int, y_start: int, word: str, directions: list[tuple[int, int]]) -> int:
-        n = 0
-        for direction in directions:
-            n += 1 if self.find_word(x_start, y_start, direction, word) else 0
-        return n
 
     def find_word(self, x_start: int, y_start: int, direction: tuple[int, int], word: str) -> bool:
         for i in range(len(word)):
@@ -36,11 +28,12 @@ class Day4(PuzzleAOC):
 
     def part1(self, data):
         total = 0
-        directions = list(itertools.product(DIRECTIONS, DIRECTIONS))
+        directions = list(itertools.product([-1, 0, 1], [-1, 0, 1]))
         for y in range(len(data)):
             for x in range(len(data[0])):
                 if data[y][x] == "X":
-                    total += self.find_words(x, y, "XMAS", directions)
+                    for direction in directions:
+                        total += 1 if self.find_word(x, y, direction, "XMAS") else 0
         return total
 
     def part2(self, data):
