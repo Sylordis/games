@@ -4,10 +4,25 @@ Code for programming exercises & online games
 
 # Dependencies
 
-Sylordis' [java commons](https://github.com/Sylordis/commons)
+For java:
+* Sylordis' [java commons](https://github.com/Sylordis/commons)
 
 # Run
 
-From `target/classes` directory:
+## Java
 
-`java -cp '.;<path-to-commons-jar>' <class> [arguments] < ../../data/<input-file>`
+From `modules/java/target/classes` directory:
+
+```bash
+java -cp '.;<path-to-commons-jar>' <class> [arguments] < ../../../../data/<input-file>
+```
+
+## Python
+
+From `modules/python`
+
+Update the `games/bin/app.py` (dynamic load still TBD)
+
+```bash
+python -m games ../../data/<input-file>
+```
