@@ -1,1 +1,1 @@
-__all__ = [f"day{i}" for i in range(5)]
+__all__ = [f"day{i}" for i in range(6)]
