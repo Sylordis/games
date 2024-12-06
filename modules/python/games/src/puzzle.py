@@ -1,7 +1,11 @@
 from abc import ABC, abstractmethod
+import logging
 from pathlib import Path
 
 class Puzzle(ABC):
+
+    def __init__(self):
+        self._log = logging.getLogger(__name__)
 
     @abstractmethod
     def parse_input(self, input_file: Path):
@@ -14,7 +18,7 @@ class Puzzle(ABC):
     @abstractmethod
     def solve(self, paths: list[str] = []):
         """
-        Solves the puzzle for both parts for each input.
+        Solves the puzzle.
 
-        :param paths: list of paths
+        :param paths: list of paths for the puzzle input.
         """
