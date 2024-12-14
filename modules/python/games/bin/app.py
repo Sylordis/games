@@ -4,7 +4,7 @@ import argparse
 import sys
 import logging
 
-from ..src.aoc.aoc2024.day5 import Day5
+from ..src.aoc.aoc2024 import *
 
 
 logger = logging.getLogger(__name__)
@@ -23,12 +23,17 @@ class ArgParser:
         self.parser.add_argument("input_file", help="Input file.", nargs='+')
         self.parser.add_argument(
             "--debug",
-            help="Sets debug mode (equivalent to '--log debug').",
+            help="Sets debug mode (equivalent to '--log debug')",
             action="store_const",
             dest="loglevel",
             const="debug",
             default="info",
         )
+        self.parser.add_argument("--part",
+                                 help="Runs only part N of a puzzle",
+                                 action="store",
+                                 metavar="N",
+                                 type=int)
 
     def parse(self):
         return self.parser.parse_args()
@@ -37,6 +42,9 @@ class ArgParser:
 def main():
     args = ArgParser().parse()
     logging.basicConfig(level=getattr(logging, args.loglevel.upper(), None))
+    args_add = {}
+    if args.part is not None:
+        args_add["part"] = args.part
     # class_name = args.module.split(".")[-1].capitalize()
     # print("..src." + args.module, class_name)
     # module = importlib.import_module("..src." + args.module, "games")
@@ -44,4 +52,4 @@ def main():
     # instance = class_()
     # instance.solve(args.input_file)
     # print(args.module, args.input_file)
-    Day5().solve(args.input_file)
+    Day7().solve(args.input_file, **args_add)
