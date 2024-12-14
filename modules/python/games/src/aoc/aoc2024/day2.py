@@ -8,7 +8,7 @@ from ...utils.lists import Lists
 class Day2(PuzzleAOC):
 
     def parse_input(self, input_file: Path):
-        return Files.lines_as_lists(input_file, int)
+        return Files.as_converted_array(input_file, int)
 
     def is_good_level(self, a:int, b:int, trend:int = 1) -> bool:
         return 1 <= b*trend - a*trend <= 3

@@ -1,3 +1,5 @@
+from typing import Any
+
 class MapUtils:
 
     @staticmethod
@@ -16,3 +18,15 @@ class MapUtils:
         for i in range(len(arr[0])):
             new_arr[i] = "".join(arr[i])
         return "\n".join(new_arr)
+
+    @staticmethod
+    def is_in_map(map: list[list[Any]], coordinates) -> bool:
+        """
+        Checks if given coordinates are in the given map, e.g. coordinates are within the bounds of lines and rows.
+
+        :param map: map to check
+        :param coordinates: (x,y[,_]) coordinates as iterable
+        :return: True if the coordinates are within the map, False otherwise
+        """
+        x,y,*rest = coordinates
+        return 0 <= y < len(map) and 0 <= x < len(map[0])

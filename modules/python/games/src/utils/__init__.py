@@ -5,3 +5,4 @@ from .lists import Lists
 from .maps import MapUtils
 from .orientation import Direction, DirectionManager
 from .tuples import Tuples
+from .vectors import Vector
