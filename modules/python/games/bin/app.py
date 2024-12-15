@@ -29,7 +29,7 @@ class ArgParser:
             const="debug",
             default="info",
         )
-        self.parser.add_argument("--part",
+        self.parser.add_argument("-p", "--part",
                                  help="Runs only part N of a puzzle",
                                  action="store",
                                  metavar="N",
@@ -52,4 +52,4 @@ def main():
     # instance = class_()
     # instance.solve(args.input_file)
     # print(args.module, args.input_file)
-    Day8().solve(args.input_file, **args_add)
+    Day9().solve(args.input_file, **args_add)
