@@ -4,7 +4,7 @@ import argparse
 import sys
 import logging
 
-from ..src.aoc.aoc2024 import *
+from ..src.aoc.aoc2025 import *
 
 
 logger = logging.getLogger(__name__)
@@ -52,4 +52,4 @@ def main():
     # instance = class_()
     # instance.solve(args.input_file)
     # print(args.module, args.input_file)
-    Day9().solve(args.input_file, **args_add)
+    Day2y2025().solve(args.input_file, **args_add)

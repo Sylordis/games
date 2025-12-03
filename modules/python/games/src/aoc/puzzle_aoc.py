@@ -10,6 +10,11 @@ class PuzzleAOC(Puzzle, ABC):
         super().__init__()
         self._parts = [self.part1, self.part2]
 
+    def parse_input(self, input_file: Path):
+        with open(input_file, "r") as file:
+            data = file.read().splitlines()
+        return data
+
     @abstractmethod
     def part1(self, data):
         """Solve part 1"""
