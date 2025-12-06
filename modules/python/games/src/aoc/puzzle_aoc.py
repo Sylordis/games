@@ -11,7 +11,7 @@ class PuzzleAOC(Puzzle, ABC):
         self._parts = [self.part1, self.part2]
 
     def parse_input(self, input_file: Path):
-        with open(input_file, "r") as file:
+        with open(input_file, "r", encoding="utf-8") as file:
             data = file.read().splitlines()
         return data
 
