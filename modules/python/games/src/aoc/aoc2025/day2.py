@@ -15,7 +15,7 @@ class Range:
         return f"{self.start}-{self.end}"
 
 
-class Day2y2025(PuzzleAOC):
+class Day20251202(PuzzleAOC):
 
     def check_repeating_pattern_on_whole_pid(self, sid:str, end:int) -> bool:
         if end * 2 > len(sid):

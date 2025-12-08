@@ -52,4 +52,4 @@ def main():
     # instance = class_()
     # instance.solve(args.input_file)
     # print(args.module, args.input_file)
-    Day2y2025().solve(args.input_file, **args_add)
+    Day20251203().solve(args.input_file, **args_add)
