@@ -1,21 +1,30 @@
 from __future__ import annotations
 from typing import Any
 
+
 class Vector:
+    """
+    Class for managing any kind of mathematical vectors. This class expects numbers.
+
+    :param coordinates: each coordinates in the space as a tuple (commonly: x, y, z, ...)
+    """
 
     def __init__(self, coordinates: tuple):
         self._coordinates: tuple = coordinates
 
     @property
     def coordinates(self):
+        "Gets this vector's coordinates."
         return self._coordinates
 
     @property
     def coords(self):
+        "Gets this vector's coordinates."
         return self._coordinates
 
     @property
     def xyz(self):
+        "Gets this vector's coordinates."
         return self._coordinates
 
     def __add__(self, value: Any) -> Vector:
@@ -25,9 +34,21 @@ class Vector:
             return self.add_scalar(value)
 
     def add_scalar(self, scalar) -> Vector:
+        """
+        Returns a new vector with every component of this vector added by a scalar factor.
+        Done automatically with `Vector + Scalar`.
+
+        :param scalar: Scalar to add.
+        """
         return Vector(tuple(e + scalar for e in self.coordinates))
 
     def add_vector(self, vector: Vector) -> Vector:
+        """
+        Returns a new vector with every component of being the sum of the components of both vectors on their respective axis.
+        Done automatically with `Vector + Vector`.
+
+        :param vector: Vector to add.
+        """
         return Vector(tuple(sum(x) for x in zip(self.coordinates, vector.coordinates)))
 
     def __eq__(self, other) -> bool:
@@ -40,6 +61,9 @@ class Vector:
 
     def __floordiv__(self, other) -> Vector:
         return Vector(tuple(e // other for e in self.coordinates))
+
+    def __getitem__(self, index):
+        return self.coordinates[index]
 
     def __hash__(self):
         return hash(self.coordinates)
@@ -92,6 +116,12 @@ class Vector:
         return self.mul_scalar(other)
 
     def mul_scalar(self, value) -> Vector:
+        """
+        Returns a new vector with every component of this vector multiplied by a scalar factor.
+        Done automatically with `Vector * Scalar`.
+
+        :param value: Scalar to multiply with
+        """
         return Vector(tuple([e * value for e in self.coordinates]))
 
     def __repr__(self):

@@ -1,13 +1,15 @@
 from __future__ import annotations
 from dataclasses import dataclass
 
+from .vectors import Vector
+
 
 @dataclass(frozen=True)
 class Direction:
 
     repr: str
     "Character representation of the direction."
-    delta: tuple[int,int]
+    vector: Vector
     "Delta for coordinates of this direction when having to move."
 
     @staticmethod
@@ -20,7 +22,7 @@ class Direction:
         """
         symbols = chars if chars is not None else ">↘↙<↖↗"
         dirs = [(1,0), (0,1), (-1,1), (-1,0), (0, -1), (1,-1)]
-        return [Direction(s,d) for s,d in zip(list(symbols), dirs)]
+        return [Direction(s,Vector(d)) for s,d in zip(list(symbols), dirs)]
 
     @staticmethod
     def square_orthogonal(chars: str = None) -> list[Direction]:
@@ -32,7 +34,7 @@ class Direction:
         """
         symbols = chars if chars is not None else "^>v<"
         dirs = [(0,-1), (1,0), (0,1), (-1,0)]
-        return [Direction(s,d) for s,d in zip(list(symbols), dirs)]
+        return [Direction(s,Vector(d)) for s,d in zip(list(symbols), dirs)]
 
     @staticmethod
     def square_all(chars: str = None) -> list[Direction]:
@@ -44,7 +46,7 @@ class Direction:
         """
         symbols = chars if chars is not None else "^↗>↘v↙<↖"
         dirs = [(0,-1), (1,-1), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1)]
-        return [Direction(s,d) for s,d in zip(list(symbols), dirs)]
+        return [Direction(s,Vector(d)) for s,d in zip(list(symbols), dirs)]
 
 
 class DirectionManager:
@@ -54,7 +56,7 @@ class DirectionManager:
 
     def __init__(self, orientations: list[Direction]):
         self.orientations: list[Direction] = orientations
-    
+
     def rotate(self, orientation: Direction, n: int = 1) -> Direction:
         """
         Rotates an orientation according to the defined orientations.
@@ -107,5 +109,3 @@ class DirectionManager:
         Leave `None` for defaults.
         """
         return DirectionManager(Direction.square_all(chars))
-
-

@@ -4,7 +4,7 @@ from ..puzzle_aoc import PuzzleAOC
 STARTING_INDEX:int = 50
 
 
-class Day20251201(PuzzleAOC):
+class Day2025n01(PuzzleAOC):
 
     def parse_rotation(self, r) -> int:
         amount = int(r[1:])

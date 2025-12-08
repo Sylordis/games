@@ -1,7 +1,7 @@
 from ..puzzle_aoc import PuzzleAOC
 
 
-class Day20251203(PuzzleAOC):
+class Day2025n03(PuzzleAOC):
 
     def parse_input(self, input_file):
         data = []
