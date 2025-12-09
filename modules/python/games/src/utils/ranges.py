@@ -28,7 +28,7 @@ class Range():
         """
         Checks if a Range intersects with another range.
         """
-        return r.start <= self.start <= r.end or r.start <= self.end <= r.end
+        return self.start <= r.start <= self.end or self.start <= r.end <= self.end
 
     def merge(self, r:Range) -> Range:
         """
@@ -41,6 +41,24 @@ class Range():
             return Range(min(r.start, self.start), max(r.end, self.end))
         else:
             return self
+    
+    def __iter__(self):
+        return iter([self.start, self.end])
+
+    def __eq__(self, other):
+        return self.start == other.start and self.end == other.end
+    
+    def __gt__(self, other):
+        return self.start > other.start or (self.start == other.start and self.end > other.end)
+        
+    def __ge__(self, other):
+        return self.start >= other.start or (self.start == other.start and self.end >= other.end)
+
+    def __lt__(self, other):
+        return self.start < other.start or (self.start == other.start and self.end < other.end)
+    
+    def __le__(self, other):
+        return self.start <= other.start or (self.start == other.start and self.end <= other.end)
     # TODO
     # Range exclude Range
     # Range merge Range

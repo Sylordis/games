@@ -34,27 +34,21 @@ class Day2025n05(PuzzleAOC):
         return fresh
 
     def part2(self, data) -> int:
-        ranges:list[Range] = data[0]
-        processed:list[Range] = []
-        self._log.debug("start=%s", ranges)
-        while len(ranges) > 0:
-            r = ranges[0]
-            indexes = []
-            # Try to merge every range that intersects
-            for i, rsub in enumerate(ranges[1:]):
-                if r.intersects(rsub):
-                    r = r.merge(rsub)
-                    indexes.append(i+1)
-            # Delete every range that was merged
-            for index in sorted(indexes + [0], reverse=True):
-                del ranges[index]
-            # If no range was merged, then it doesn't intersect, no need to process it further
-            if len(indexes) == 0:
-                processed.append(r)
+        self._log.debug("Ranges=%s", data[0])
+        ranges:list[Range] = sorted(data[0], key=lambda f: f.end)
+        self._log.debug("Sorted=%s", ranges)
+        current:Range = ranges[-1]
+        processed = []
+        for i in range(len(ranges)-2, -1, -1):
+            self._log.debug("%ds current=%s r[i]=%s", i, current, ranges[i])
+            if current.intersects(ranges[i]):
+                self._log.debug("%dp intersects")
+                current = current.merge(ranges[i])
             else:
-                ranges = [r] + ranges
-            self._log.debug("ranges=%s", ranges)
-            self._log.debug("proc  =%s", processed)
-            self._log.debug("indexes=%s", indexes)
-        self._log.debug(processed)
-        return sum([r.span for r in processed])
+                processed.append(current)
+                current = ranges[i]
+                ranges = ranges[:i]
+            self._log.debug("%de current=%s", i, current)
+        processed.append(current)
+        self._log.debug("End=%s", processed)
+        return sum([f.span for f in processed])
