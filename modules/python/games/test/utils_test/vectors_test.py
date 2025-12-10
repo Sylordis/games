@@ -3,6 +3,18 @@ import pytest
 from utils.vectors import Vector
 
 
+@pytest.mark.parametrize("expected_coords,vector",[
+    ([0], Vector(0)),
+    ([0], Vector((0))),
+    ([0,0], Vector(0,0)),
+    ([0,0], Vector((0,0))),
+    ([0,0], Vector([0,0])),
+    ([1,2,3,4], Vector(1,2,3,4)),
+    ([1,2,3,4], Vector([1,2,3,4])),
+])
+def test_builder(expected_coords, vector):
+    assert vector.coordinates == expected_coords
+
 @pytest.mark.parametrize("expected,a,b", [
     ((0,0), (0,0), Vector((0,0))),
     ((1,2), (0,0), Vector((1,2))),
@@ -18,6 +30,16 @@ def test_add(expected: tuple, a: tuple, b):
     v = va + b
     assert v == expected
 
+
+@pytest.mark.parametrize("expected,a,b", [
+    (0, Vector(0,0),Vector(0,0)),
+    (0, Vector(0,0),Vector(0,0,0,0)),
+    (1, Vector(1), Vector(0)),
+    (45, Vector(48), Vector(-3)),
+    (15, Vector(-5), Vector(10)),
+])
+def test_distance(expected, a:Vector, b:Vector):
+    assert a.distance(b) == expected
 
 @pytest.mark.parametrize("a,b", [
     ((0,0),Vector((0,0))),
