@@ -18,15 +18,27 @@ class Day2025n06(PuzzleAOC):
             result = reduce(op, list(map(int, data)))
         return result
 
-    def parse_input(self, input_file:Path):
-        data = []
-        with open(input_file, "r", encoding="utf-8") as file:
-            for line in file.readlines():
-                data.append(line.split())
-        return data
-
     def part1(self, data) -> int:
-        return sum([self.calculate(d[-1], d[:-1]) for d in list(zip(*data))])
+        pdata = [line.split() for line in data]
+        return sum([self.calculate(d[-1], d[:-1]) for d in list(zip(*pdata))])
 
     def part2(self, data) -> int:
-        pass
+        total = 0
+        self._log.debug(data)
+        pdata = []
+        for line in data:
+            pdata.append(list(line))
+        self._log.debug(pdata)
+        pdata = list(reversed(list(zip(*pdata))))
+        self._log.debug(pdata)
+        last_i = 0
+        for i,e in enumerate(pdata):
+            if all(v is " " for v in e):
+                last_i += 1
+            elif e[-1] in ("*", "+"):
+                symbol = e[-1]
+                splice = list(map(lambda v: "".join(v).strip(), pdata[last_i:i])) + ["".join(pdata[i][:-1]).strip()]
+                last_i = i+1
+                self._log.debug("symbol=%s splice=%s", symbol, splice)
+                total += self.calculate(symbol, splice)
+        return total
