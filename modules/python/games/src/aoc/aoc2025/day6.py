@@ -33,7 +33,7 @@ class Day2025n06(PuzzleAOC):
         self._log.debug(pdata)
         last_i = 0
         for i,e in enumerate(pdata):
-            if all(v is " " for v in e):
+            if all(v == " " for v in e):
                 last_i += 1
             elif e[-1] in ("*", "+"):
                 symbol = e[-1]
